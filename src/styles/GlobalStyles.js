@@ -33,5 +33,6 @@ export const GlobalStyled = createGlobalStyle`
         min-height: 100vh;
         font-family: var(--font-main);
         background-color: var(--color-grey4);
+        position: relative;
     }
 `

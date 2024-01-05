@@ -1,20 +1,24 @@
-import { AdminProvider } from "./providers/AdminContext";
-import { UserProvider } from "./providers/UserContext";
+import { useContext } from "react";
 import { RoutesMain } from "./routes/RoutesMain";
 import { GlobalStyled } from "./styles/globalStyles";
+import { UserContext } from "./providers/UserContext";
+import { LoadingPage } from "./pages/LoadingPage";
+import { AdminProvider } from "./providers/AdminContext";
+import { UserProvider } from "./providers/UserContext";
 
 function App() {
+  const { loading } = useContext(UserContext);
 
   return (
     <>
       <GlobalStyled />
       <UserProvider>
         <AdminProvider>
-          <RoutesMain />
+          {loading ? <LoadingPage /> : <RoutesMain />}
         </AdminProvider>
       </UserProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

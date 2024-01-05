@@ -7,4 +7,8 @@ export const StyledHeaderHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .name {
+    text-transform: capitalize;
+  }
 `;

@@ -9,7 +9,7 @@ export const HeaderHome = () => {
 
     return (
         <StyledHeaderHome>
-            <StyledTypography typographyStyle="title1">
+            <StyledTypography typographyStyle="title1" className="name">
                 Olá, {user.full_name}
             </StyledTypography>
             <StyledTypography typographyStyle="headlineBold" color="#868E96">

@@ -1,18 +1,22 @@
 import { StyledContactItem } from "./style";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { StyledTypography } from "../../styles/typography";
+import { useContext } from "react";
+import { AdminContext } from "../../providers/AdminContext";
 
 export const ContactItem = ({ contact }) => {
+  const { openEditModal, openDeleteModal } = useContext(AdminContext);
+
   return (
     <StyledContactItem>
       <div className="nameContainer">
         <div>
-          <StyledTypography typographyStyle={"headline"}>
+          <StyledTypography typographyStyle={"headline"} className="name">
             {contact.full_name}
           </StyledTypography>
         </div>
         <div>
-          <StyledTypography typographyStyle={"headline"}>
+          <StyledTypography typographyStyle={"headline"} className="email">
             {contact.email}
           </StyledTypography>
         </div>
@@ -23,8 +27,8 @@ export const ContactItem = ({ contact }) => {
         </div>
       </div>
       <div className="iconContainer">
-        <FaPencilAlt />
-        <FaTrashAlt />
+        <FaPencilAlt onClick={() => openEditModal(contact)} />
+        <FaTrashAlt onClick={() => openDeleteModal(contact)} />
       </div>
     </StyledContactItem>
   );

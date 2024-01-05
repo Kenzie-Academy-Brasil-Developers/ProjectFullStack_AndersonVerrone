@@ -31,4 +31,12 @@ export const StyledContactItem = styled.li`
             }
         }
     }
+
+    .name {
+        text-transform: capitalize;
+    }
+
+    .email {
+        text-transform: lowercase;
+    }
 `

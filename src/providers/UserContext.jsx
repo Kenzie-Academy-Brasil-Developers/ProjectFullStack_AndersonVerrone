@@ -7,8 +7,9 @@ import { toast } from "react-toastify";
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
-  const [contacts,setContacts] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const { reset } = useForm();
   const navigate = useNavigate();
 
@@ -19,9 +20,8 @@ export const UserProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setUser(data);
-      setContacts(data.contacts);
-
+      setUser(await data);
+      setContacts(await data.contacts);
     } catch (error) {
       toastyError("Ops! Aconteceu algum erro!");
     }
@@ -32,9 +32,8 @@ export const UserProvider = ({ children }) => {
     const token = localStorage.getItem("@TOKEN");
 
     if (userId && token) {
-      loadUser(token,userId);
+      loadUser(token, userId);
     }
-
   }, []);
 
   const toastySuccess = (text) => {
@@ -83,17 +82,22 @@ export const UserProvider = ({ children }) => {
       const { data } = await api.post("/login", FormData);
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.userId);
-      const dataUser  = await api.get(`/user/${data.userId}`, {
+      const dataUser = await api.get(`/user/${data.userId}`, {
         headers: {
           Authorization: `Bearer ${data.token}`,
         },
       });
       setUser(dataUser.data);
       setContacts(user.contacts);
-      reset();
-      navigate("/home");
+      if (user.contacts && user.contacts.length > 0) {
+        toastySuccess("Login realizado com sucesso!");
+        reset();
+        navigate("/home");
+      } else {
+        toastyError("Usuário ou contatos não encontrados.");
+      }
     } catch (error) {
-      console.error(error);
+      toastyError("Ops! Ocorreu um erro ao logar!");
     } finally {
       setIsLoading(false);
     }
@@ -115,7 +119,9 @@ export const UserProvider = ({ children }) => {
         userLogout,
         contacts,
         loadUser,
-        
+        loading,
+        toastySuccess,
+        toastyError,
       }}
     >
       {children}
