@@ -12,7 +12,7 @@ export const ContactList = () => {
             ? contacts.map((contact,index) => (
                 <ContactItem key={index} contact={contact}/>
             ))
-            : <p>Sem Nenhum Contato adicionado!</p>}
+            : <p className="emptyText">Sem Nenhum Contato adicionado!</p>}
         </StyledContactList>
     )
 }

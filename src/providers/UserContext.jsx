@@ -87,9 +87,13 @@ export const UserProvider = ({ children }) => {
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.userId);
       loadUser(data.token,data.userId);
-      toastySuccess("Login realizado com sucesso!");
-      reset();
-      navigate("/home");
+      if (user.contacts && user.contacts.length > 0) {
+        toastySuccess("Login realizado com sucesso!");
+        reset();
+        navigate("/home");
+      } else {
+        toastyError("Usuário ou contatos não encontrados.");
+      }
     } catch (err) {
       toastyError("Ops! Ocorreu um erro ao logar!");
     } finally {

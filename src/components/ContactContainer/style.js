@@ -7,8 +7,8 @@ export const StyledContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  
+  padding: 3rem 1rem 2rem;
   gap: 1.3125rem;
 
   > div {
@@ -29,4 +29,4 @@ export const StyledContactContainer = styled.div`
         }
     }
   }
-`;
+`
