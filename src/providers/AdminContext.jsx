@@ -48,6 +48,7 @@ export const AdminProvider = ({ children }) => {
             });
             loadUser(token, userId);
             toastySuccess("Contato realizado com sucesso!");
+            setIsOpenModalCreate(false);
         } catch (error) {
             toastyError("Ops! Ocorreu um erro ao cadastrar!");
         } finally {

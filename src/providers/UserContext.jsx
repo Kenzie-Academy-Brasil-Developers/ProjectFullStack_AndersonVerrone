@@ -15,6 +15,7 @@ export const UserProvider = ({ children }) => {
 
   const loadUser = async (token, id) => {
     try {
+      setLoading(true);
       const { data } = await api.get(`/user/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -24,15 +25,18 @@ export const UserProvider = ({ children }) => {
       setContacts(data.contacts);
     } catch (error) {
       toastyError("Ops! Aconteceu algum erro!");
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     const userId = localStorage.getItem("@USERID");
     const token = localStorage.getItem("@TOKEN");
-
+    console.log("beta");
     if (userId && token) {
       loadUser(token, userId);
+      console.log("alfa")
     }
   }, []);
 
@@ -82,21 +86,11 @@ export const UserProvider = ({ children }) => {
       const { data } = await api.post("/login", FormData);
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.userId);
-      const dataUser = await api.get(`/user/${data.userId}`, {
-        headers: {
-          Authorization: `Bearer ${data.token}`,
-        },
-      });
-      setUser(dataUser.data);
-      setContacts(dataUser.data.contacts);
-      if (user.contacts && user.contacts.length > 0) {
-        toastySuccess("Login realizado com sucesso!");
-        reset();
-        navigate("/home");
-      } else {
-        toastyError("Usuário ou contatos não encontrados.");
-      }
-    } catch (error) {
+      loadUser(data.token,data.userId);
+      toastySuccess("Login realizado com sucesso!");
+      reset();
+      navigate("/home");
+    } catch (err) {
       toastyError("Ops! Ocorreu um erro ao logar!");
     } finally {
       setIsLoading(false);
