@@ -10,7 +10,7 @@ export const ContactContainer = () => {
   return (
     <StyledContactContainer>
       <div>
-        <StyledTypography typographyStyle="headlineBold">
+        <StyledTypography typographystyle="headlineBold">
           Contatos
         </StyledTypography>
         <FaPlusCircle onClick={()=>{setIsOpenModalCreate(true)}}/>

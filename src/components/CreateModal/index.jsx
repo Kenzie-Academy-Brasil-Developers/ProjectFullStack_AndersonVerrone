@@ -35,7 +35,7 @@ export const CreateModal = () => {
       <div>
         <header>
           <div>
-            <StyledTypography typographyStyle="title3">
+            <StyledTypography typographystyle="title3">
               Cadastrar Contato
             </StyledTypography>
             <MdClose

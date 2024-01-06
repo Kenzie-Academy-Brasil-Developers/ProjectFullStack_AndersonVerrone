@@ -9,10 +9,10 @@ export const HeaderHome = () => {
 
     return (
         <StyledHeaderHome>
-            <StyledTypography typographyStyle="title1" className="name">
+            <StyledTypography typographystyle="title1" className="name">
                 Olá, {user.full_name}
             </StyledTypography>
-            <StyledTypography typographyStyle="headlineBold" color="#868E96">
+            <StyledTypography typographystyle="headlineBold" color="#868E96">
                 {user.email}
             </StyledTypography>
         </StyledHeaderHome>

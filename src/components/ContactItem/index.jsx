@@ -11,17 +11,17 @@ export const ContactItem = ({ contact }) => {
     <StyledContactItem>
       <div className="nameContainer">
         <div>
-          <StyledTypography typographyStyle={"headline"} className="name">
+          <StyledTypography typographystyle={"headline"} className="name">
             {contact.full_name}
           </StyledTypography>
         </div>
         <div>
-          <StyledTypography typographyStyle={"headline"} className="email">
+          <StyledTypography typographystyle={"headline"} className="email">
             {contact.email}
           </StyledTypography>
         </div>
         <div>
-          <StyledTypography typographyStyle={"headline"}>
+          <StyledTypography typographystyle={"headline"}>
             {contact.phone_number}
           </StyledTypography>
         </div>

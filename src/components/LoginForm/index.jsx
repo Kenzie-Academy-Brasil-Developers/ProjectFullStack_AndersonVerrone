@@ -26,7 +26,7 @@ export const LoginForm = () => {
 
   return (
     <StyledLoginForm onSubmit={handleSubmit(submit)}>
-      <StyledTypography typographyStyle="title1">Login</StyledTypography>
+      <StyledTypography typographystyle="title1">Login</StyledTypography>
       <Input
         label="E-mail"
         id="email"
@@ -46,7 +46,7 @@ export const LoginForm = () => {
       <StyledButtonMain disabled={isLoading}>
         {isLoading ? "Logando..." : "Entrar"}
       </StyledButtonMain>
-      <StyledTypography typographyStyle="headlineBold" color="#868E96">
+      <StyledTypography typographystyle="headlineBold" color="#868E96">
         Ainda não possui uma conta?
       </StyledTypography>
       <Link to="/register">

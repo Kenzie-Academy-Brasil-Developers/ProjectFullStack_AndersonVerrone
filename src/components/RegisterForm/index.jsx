@@ -30,10 +30,10 @@ export const RegisterForm = () => {
 
   return (
     <StyledRegisterForm onSubmit={handleSubmit(submit)}>
-      <StyledTypography typographyStyle="title1">
+      <StyledTypography typographystyle="title1">
         Crie sua conta
       </StyledTypography>
-      <StyledTypography typographyStyle="headline" color="#868E96">
+      <StyledTypography typographystyle="headline" color="#868E96">
         Rapido e grátis, vamos nessa
       </StyledTypography>
       <Input

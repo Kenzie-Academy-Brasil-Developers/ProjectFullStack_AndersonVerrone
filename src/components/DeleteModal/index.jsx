@@ -14,7 +14,7 @@ export const DeleteModal = () => {
       <div>
         <header>
           <div>
-            <StyledTypography typographyStyle="title3">
+            <StyledTypography typographystyle="title3">
               Deletar Contato
             </StyledTypography>
             <MdClose
@@ -25,10 +25,10 @@ export const DeleteModal = () => {
           </div>
         </header>
         <div>
-          <StyledTypography typographyStyle="headline">
+          <StyledTypography typographystyle="headline">
             Deseja deletar o contato de
           </StyledTypography>
-          <StyledTypography typographyStyle="headlineBold">
+          <StyledTypography typographystyle="headlineBold">
             " {target.full_name} "
           </StyledTypography>
           <StyledButtonMain disabled={isLoading} onClick={()=>deleteContact(setIsLoading)}>
