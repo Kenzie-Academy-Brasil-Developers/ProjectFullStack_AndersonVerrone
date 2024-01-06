@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StyledContactList } from "./style";
 import { UserContext } from "../../providers/UserContext";
 import { ContactItem } from "../ContactItem";

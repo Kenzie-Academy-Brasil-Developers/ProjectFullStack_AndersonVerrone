@@ -1,5 +1,5 @@
 import { StyledContactContainer } from "./style";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { FaPlusCircle } from "react-icons/fa";
 import { ContactList } from "../ContactList";
 import { useContext } from "react";

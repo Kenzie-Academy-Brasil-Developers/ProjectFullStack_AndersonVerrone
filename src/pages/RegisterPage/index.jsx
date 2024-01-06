@@ -1,7 +1,7 @@
 import logo from "../../assets/logoTexto.png";
 import { StyledRegisterPage } from "./style";
 import { Link } from "react-router-dom";
-import { StyledButtonSecond } from "../../styles/button";
+import { StyledButtonSecond } from "../../styles/Button";
 import { RegisterForm } from "../../components/RegisterForm";
 
 export const RegisterPage = () => {

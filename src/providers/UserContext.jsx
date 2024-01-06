@@ -20,8 +20,8 @@ export const UserProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setUser(await data);
-      setContacts(await data.contacts);
+      setUser(data);
+      setContacts(data.contacts);
     } catch (error) {
       toastyError("Ops! Aconteceu algum erro!");
     }
@@ -88,7 +88,7 @@ export const UserProvider = ({ children }) => {
         },
       });
       setUser(dataUser.data);
-      setContacts(user.contacts);
+      setContacts(dataUser.data.contacts);
       if (user.contacts && user.contacts.length > 0) {
         toastySuccess("Login realizado com sucesso!");
         reset();

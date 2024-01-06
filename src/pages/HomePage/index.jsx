@@ -1,6 +1,6 @@
 import logo from "../../assets/logoImg.png";
 import { StyledHomePage } from "./style";
-import { StyledButtonExit } from "../../styles/button";
+import { StyledButtonExit } from "../../styles/Button";
 import { HeaderHome} from "../../components/HeaderHome";
 import { ContactContainer } from "../../components/ContactContainer"
 import { useContext } from "react";

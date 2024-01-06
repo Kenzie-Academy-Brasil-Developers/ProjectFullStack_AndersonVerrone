@@ -1,6 +1,6 @@
 import { StyledContactItem } from "./style";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { useContext } from "react";
 import { AdminContext } from "../../providers/AdminContext";
 

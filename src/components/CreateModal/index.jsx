@@ -1,8 +1,8 @@
 import { StyledCreateModal } from "./style";
 import { MdClose } from "react-icons/md";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { useContext, useState } from "react";
-import { StyledButtonMain } from "../../styles/button";
+import { StyledButtonMain } from "../../styles/Button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createModalSchema } from "./createModalSchema";

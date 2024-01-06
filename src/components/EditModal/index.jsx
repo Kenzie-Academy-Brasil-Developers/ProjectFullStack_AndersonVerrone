@@ -1,13 +1,13 @@
 import { StyledEditModal } from "./style";
 import { MdClose } from "react-icons/md";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { Input } from "../Input";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { editModalSchema } from "./editModalSchema";
 import { AdminContext } from "../../providers/AdminContext";
-import { StyledButtonMain } from "../../styles/button";
+import { StyledButtonMain } from "../../styles/Button";
 
 export const EditModal = () => {
   const [isLoading, setIsLoading] = useState(false);

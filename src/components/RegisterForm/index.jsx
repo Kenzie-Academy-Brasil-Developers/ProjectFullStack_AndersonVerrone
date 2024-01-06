@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { Input } from "../Input";
 import { StyledRegisterForm } from "./style";
 import { useContext, useState } from "react";
-import { StyledButtonMain } from "../../styles/button";
+import { StyledButtonMain } from "../../styles/Button";
 import { registerFormSchema } from "./registerFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../providers/UserContext";

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { RoutesMain } from "./routes/RoutesMain";
-import { GlobalStyled } from "./styles/globalStyles";
+import { GlobalStyled } from "./styles/GlobalStyles";
 import { UserContext } from "./providers/UserContext";
 import { LoadingPage } from "./pages/LoadingPage";
 import { AdminProvider } from "./providers/AdminContext";

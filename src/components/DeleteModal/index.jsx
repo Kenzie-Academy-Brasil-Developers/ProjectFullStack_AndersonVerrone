@@ -1,9 +1,9 @@
 import { StyledDeleteModal } from "./style";
-import { StyledTypography } from "../../styles/typography";
+import { StyledTypography } from "../../styles/Typography";
 import { MdClose } from "react-icons/md";
 import { useContext, useState } from "react";
 import { AdminContext } from "../../providers/AdminContext";
-import { StyledButtonMain } from "../../styles/button";
+import { StyledButtonMain } from "../../styles/Button";
 
 export const DeleteModal = () => {
   const [isLoading, setIsLoading] = useState(false);

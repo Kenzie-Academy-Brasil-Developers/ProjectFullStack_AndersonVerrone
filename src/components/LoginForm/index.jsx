@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginFormSchema";
-import { StyledTypography } from "../../styles/typography";
-import { StyledButtonMain } from "../../styles/button";
-import { StyledButtonSecond } from "../../styles/button";
+import { StyledTypography } from "../../styles/Typography";
+import { StyledButtonMain } from "../../styles/Button";
+import { StyledButtonSecond } from "../../styles/Button";
 import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
